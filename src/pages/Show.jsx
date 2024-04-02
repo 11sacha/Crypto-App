@@ -29,6 +29,8 @@ export default function Show() {
           <div className="show-graph">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart
+                width={500}
+                height={400}
                 data={store.graphData}
                 margin={{
                   top: 10,
@@ -46,30 +48,34 @@ export default function Show() {
             </ResponsiveContainer>
           </div>
         </div>
-        <div>
-            <h4>Market cap rank</h4>
-            <span>{store.dataRes.data.market_cap_rank}</span>
+        <div className="show-details">
+          <h2>Details</h2>
+          <div className='show-details-row'>
+              <h3>Market cap rank</h3>
+              <span>{store.dataRes.data.market_cap_rank}</span>
+          </div>
+          <div className='show-details-row'>
+              <h3>24h High</h3>
+              <span>{store.dataRes.data.market_data.high_24h.usd}</span>
+          </div>
+          <div className='show-details-row'>
+              <h3>24h Low</h3>
+              <span>{store.dataRes.data.market_data.low_24h.usd}</span>
+          </div>
+          <div className='show-details-row'>
+              <h3>Circulating supply</h3>
+              <span>{store.dataRes.data.market_data.circulating_supply}</span>
+          </div>
+          <div className='show-details-row'>
+              <h3>Current Price</h3>
+              <span>{store.dataRes.data.market_data.current_price.usd}</span>
+          </div>
+          <div className='show-details-row'>
+              <h3>1y change</h3>
+              <span>{store.dataRes.data.market_data.price_change_percentage_1y.toFixed(2)}%</span>
+          </div>
         </div>
-        <div>
-            <h4>24h High</h4>
-            <span>{store.dataRes.data.market_data.high_24h.usd}</span>
-        </div>
-        <div>
-            <h4>24h Low</h4>
-            <span>{store.dataRes.data.market_data.low_24h.usd}</span>
-        </div>
-        <div>
-            <h4>Circulating supply</h4>
-            <span>{store.dataRes.data.market_data.circulating_supply}</span>
-        </div>
-        <div>
-            <h4>Current Price</h4>
-            <span>{store.dataRes.data.market_data.current_price.usd}</span>
-        </div>
-        <div>
-            <h4>1y change</h4>
-            <span>{store.dataRes.data.market_data.price_change_percentage_1y.toFixed(2)}%</span>
-        </div>
+        
     </div>
   )
 }

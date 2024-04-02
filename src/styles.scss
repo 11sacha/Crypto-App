@@ -68,7 +68,7 @@ img {
     }
 }
 
-header .width a svg {
+header .width a {
     color: white;
 }
 
@@ -90,6 +90,33 @@ header .width a svg {
         padding: 0 24px;
         border-radius: 12px;
         line-height: 54px;
+    }
+}
+
+@keyframes rotating {
+    from {
+      transform: translateY(-50%) rotate(0deg);
+    }
+    to {
+      transform: translateY(-50%) rotate(360deg);
+    }
+  }
+
+.home-search-input {
+    position: relative;
+
+    svg {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 24px;
+        animation: 2s rotating infinite linear;
+        opacity: 0;
+        transition: 0.2s opacity;
+    }
+
+    &.searching svg {
+        opacity: 1;
     }
 }
 
@@ -170,6 +197,35 @@ header .width a svg {
 }
 
 .show-graph {
-    height: 200px;
+    height: 250px;
     width: 100%;
+}
+
+.show-details {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    max-width: 600px;
+    margin: 0 auto;
+    
+
+    h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+.show-details-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    color: #666;
+
+    h3 {
+        font-size: 16px;
+        color: #111;
+    }
 }

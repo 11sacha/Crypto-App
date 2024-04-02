@@ -9,7 +9,7 @@ export default function Header({ back }) {
         <div className="width">
             {back && (
                 <a href="/">
-                    <i class="fa-solid fa-arrow-left"></i>
+                    <i className="fa-solid fa-arrow-left"></i>
                 </a>
             )}
             <h1>
